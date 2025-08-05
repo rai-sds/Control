@@ -96,7 +96,7 @@ function App() {
       title: "Cortinas Motorizadas",
       description: "Controle inteligente com integração à casa inteligente (smart home)",
       icon: Settings,
-      image: "/assets/images/1.jpg",
+      image: "/assets/images/2.jpg",
       
       video: null,
       hasVideo: false
@@ -106,7 +106,7 @@ function App() {
       title: "Persianas Motorizadas",
       description: "Sistemas modernos de automação para máximo conforto e praticidade",
       icon: Shield,
-      image: "/assets/images/2.jpg",
+      image: "/assets/images/1.jpg",
       // PARA ADICIONAR VÍDEO: substitua por /assets/videos/persiana-motorizada-funcionando.mp4
       video: null,
       hasVideo: true
@@ -546,12 +546,7 @@ function App() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   {/* INDICADOR DE VÍDEO DISPONÍVEL */}
-                  {service.hasVideo && (
-                    <div className="absolute top-4 right-4 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
-                      <Play className="w-3 h-3" />
-                      <span>Vídeo</span>
-                    </div>
-                  )}
+                  
                   {/* CATEGORIA DO SERVIÇO */}
                   <div className="absolute bottom-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     {service.category}
@@ -1001,7 +996,7 @@ function App() {
 
   </div>
 </section>
-
+       
       {/* RODAPÉ */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
