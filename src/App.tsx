@@ -97,9 +97,9 @@ function App() {
       description: "Controle inteligente com integração à casa inteligente (smart home)",
       icon: Settings,
       image: "/assets/images/1.jpg",
-      // PARA ADICIONAR VÍDEO: substitua por /assets/videos/cortina-motorizada-funcionando.mp4
+      
       video: null,
-      hasVideo: true
+      hasVideo: false
     },
     {
       category: "Persianas",
@@ -593,10 +593,7 @@ function App() {
                   <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-colors cursor-pointer">
                     <Play className="w-10 h-10 text-white ml-1" />
                   </div>
-                  <p className="text-lg font-medium">Clique para assistir nosso vídeo institucional</p>
-                  <p className="text-sm opacity-75 mt-2">
-                    PARA ADICIONAR SEU VÍDEO: Substitua por /assets/videos/video-institucional.mp4
-                  </p>
+                  
                 </div>
               </div>
               
@@ -899,110 +896,111 @@ function App() {
 
       {/* SEÇÃO DE CONTATO */}
       <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* INFORMAÇÕES DE CONTATO */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Brasília</h4>
-                      <p className="text-gray-600 mb-1">SMPW Quadra 26 Conjunto 07 Lote 11/12</p>
-                      <p className="text-gray-600 mb-1">CEP: 71741-600</p>
-                      <p className="text-gray-600 mb-2">Responsável: Daniel Finotti Borges</p>
-                      <p className="text-gray-600 mb-1">📱 Tel: (61) 98127-6447</p>
-                      <p className="text-gray-600">contato@controlpersianas.com.br</p>
-                    </div>
-                  </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Goiânia</h4>
-                      <p className="text-gray-600 mb-1">Rua 89B número 102 - Setor Sul</p>
-                      <p className="text-gray-600 mb-2">CEP: 74093-180</p>
-                      <p className="text-gray-600 mb-1">📱 Tel: (62) 8556-5975</p>
-                      <p className="text-gray-600">controlpersianas@hotmail.com</p>
-                    </div>
-                  </div>
-                </div>
+    {/* SEÇÃO ESPECIAL PARA QUEM CHEGOU ATÉ O FINAL */}
+    <div className="text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        💡 Ficou até o Final? <span className="text-blue-600">Temos Algo Especial pra Você!</span>
+      </h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        Deixe seu nome e telefone e receba conteúdo exclusivo, dicas e novidades em primeira mão.
+        <br />
+        <span className="text-blue-600 font-semibold">Quem preenche, sai na frente. 😉</span>
+      </p>
+
+      <div className="max-w-md mx-auto bg-white rounded-2xl shadow-xl p-8">
+        <form onSubmit={handleFormSubmit} className="space-y-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Nome</label>
+            <input 
+              type="text" 
+              name="nome"
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+              placeholder="Seu nome completo"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+            <input 
+              type="tel" 
+              name="telefone"
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+              placeholder="(61) 99999-9999"
+            />
+          </div>
+
+          <button 
+            type="submit"
+            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+          >
+            <span>📱 Quero Receber Conteúdo Exclusivo!</span>
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </form>
+      </div>
+    </div>
+
+    {/* GRID COM INFORMAÇÕES DE CONTATO E WHATSAPP */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {/* INFORMAÇÕES DE CONTATO */}
+      <div className="space-y-8">
+        <div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
+          <div className="space-y-6">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Brasília</h4>
+                <p className="text-gray-600 mb-1">SMPW Quadra 26 Conjunto 07 Lote 11/12</p>
+                <p className="text-gray-600 mb-1">CEP: 71741-600</p>
+                <p className="text-gray-600 mb-2">Responsável: Daniel Finotti Borges</p>
+                <p className="text-gray-600 mb-1">📱 Tel: (61) 98127-6447</p>
+                <p className="text-gray-600">contato@controlpersianas.com.br</p>
               </div>
             </div>
 
-            {/* FORMULÁRIO DE CONTATO SIMPLIFICADO */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Entre em Contato</h3>
-              <p className="text-gray-600 mb-6">
-                Fale conosco pelo WhatsApp e receba atendimento personalizado
-              </p>
-              <a 
-                href="https://wa.me/5561981276447?text=Olá! Vim através do site da Control Persianas e gostaria de mais informações sobre os serviços."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transform hover:scale-105 transition-all duration-300"
-              >
-                <MessageCircle className="w-6 h-6" />
-                <span>Falar no WhatsApp</span>
-              </a>
-            </div>
-          </div>
-          
-          {/* SEÇÃO ESPECIAL PARA QUEM CHEGOU ATÉ O FINAL */}
-          <div className="mt-20 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              💡 Ficou até o Final? <span className="text-blue-600">Temos Algo Especial pra Você!</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Deixe seu nome e telefone e receba conteúdo exclusivo, dicas e novidades em primeira mão.
-              <br />
-              <span className="text-blue-600 font-semibold">Quem preenche, sai na frente. 😉</span>
-            </p>
-            
-            {/* FORMULÁRIO ESPECIAL */}
-            <div className="max-w-md mx-auto bg-white rounded-2xl shadow-xl p-8">
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Nome</label>
-                  <input 
-                    type="text" 
-                    name="nome"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Seu nome completo"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
-                  <input 
-                    type="tel" 
-                    name="telefone"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    placeholder="(61) 99999-9999"
-                  />
-                </div>
-
-                <button 
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
-                >
-                  <span>📱 Quero Receber Conteúdo Exclusivo!</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </form>
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Goiânia</h4>
+                <p className="text-gray-600 mb-1">Rua 89B número 102 - Setor Sul</p>
+                <p className="text-gray-600 mb-2">CEP: 74093-180</p>
+                <p className="text-gray-600 mb-1">📱 Tel: (62) 8556-5975</p>
+                <p className="text-gray-600">controlpersianas@hotmail.com</p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* FORMULÁRIO DE CONTATO SIMPLIFICADO */}
+      <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Entre em Contato</h3>
+        <p className="text-gray-600 mb-6">
+          Fale conosco pelo WhatsApp e receba atendimento personalizado
+        </p>
+        <a 
+          href="https://wa.me/5561981276447?text=Olá! Vim através do site da Control Persianas e gostaria de mais informações sobre os serviços."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transform hover:scale-105 transition-all duration-300"
+        >
+          <MessageCircle className="w-6 h-6" />
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* RODAPÉ */}
       <footer className="bg-gray-900 text-white py-12">
