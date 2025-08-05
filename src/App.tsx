@@ -96,7 +96,7 @@ function App() {
       title: "Cortinas Motorizadas",
       description: "Controle inteligente com integração à casa inteligente (smart home)",
       icon: Settings,
-      image: "/assets/images/WhatsApp Image 2025-06-24 at 15.41.22.jpeg",
+      image: "/assets/images/1.jpg",
       // PARA ADICIONAR VÍDEO: substitua por /assets/videos/cortina-motorizada-funcionando.mp4
       video: null,
       hasVideo: true
@@ -106,7 +106,7 @@ function App() {
       title: "Persianas Motorizadas",
       description: "Sistemas modernos de automação para máximo conforto e praticidade",
       icon: Shield,
-      image: "/assets/images/WhatsApp Image 2025-06-24 at 15.44.23 (1).jpeg",
+      image: "/assets/images/2.jpg",
       // PARA ADICIONAR VÍDEO: substitua por /assets/videos/persiana-motorizada-funcionando.mp4
       video: null,
       hasVideo: true
@@ -126,7 +126,7 @@ function App() {
       title: "Equipe Especializada",
       description: "Profissionais qualificados com garantia total de qualidade",
       icon: CheckCircle,
-      image: "/assets/images/WhatsApp Image 2025-06-24 at 15.41.04.jpeg",
+      image: "/assets/images/3.jpg",
       video: null,
       hasVideo: false
     }
