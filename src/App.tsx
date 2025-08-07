@@ -53,7 +53,7 @@ function App() {
   const problems = [
     {
       title: "Sua Casa Sem Privacidade?",
-      description: "Transforme janelas em refúgios de intimidade! Nossas soluções garantem total privacidade sem sacrificar a entrada de luz natural.",
+      description: "Nossas soluções garantem total privacidade sem sacrificar a entrada de luz natural.",
       icon: Eye,
       color: "from-purple-600 to-purple-700",
       // Imagem de exemplo para privacidade
@@ -457,7 +457,7 @@ function App() {
             Há mais de 10 anos levando sofisticação e praticidade para ambientes residenciais.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#contact" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
+            <a href="https://wa.me/c/556181276447" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
               <span>📲 Fale agora com um especialista no WhatsApp!</span>
               <ArrowRight className="w-5 h-5" />
             </a>
@@ -592,7 +592,7 @@ function App() {
                 </div>
               </div>
               
-              {/* EXEMPLO DE COMO ADICIONAR VÍDEO:
+              
               <video 
                 className="w-full h-full object-cover"
                 controls
@@ -601,7 +601,7 @@ function App() {
                 <source src="/assets/videos/video-institucional.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeo.
               </video>
-              */}
+              
             </div>
           </div>
         </div>
@@ -731,7 +731,7 @@ function App() {
               Por que Escolher a <span className="text-blue-400">Control Persianas?</span>
             </h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              10 anos de experiência transformando ambientes com excelência e inovação
+              Há mais de 10 anos levando conforto e praticidade com persianas, cortinas e toldos motorizados.
             </p>
           </div>
 
@@ -1017,7 +1017,7 @@ function App() {
                 />
               </div>
               <p className="text-gray-400 leading-relaxed max-w-md">
-                Transformando ambientes há mais de 10 anos com soluções inteligentes em automação residencial e comercial.
+               Há mais de 10 anos levando conforto e praticidade com persianas, cortinas e toldos motorizados.
               </p>
               <div className="mt-4 text-sm text-gray-500">
                 <p>CNPJ: 47.665.646/0001-51</p>
@@ -1066,7 +1066,7 @@ function App() {
   >
     <path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.734 5.445 2.02 7.75L0 32l8.52-2.225A15.899 15.899 0 0016 32c8.837 0 16-7.164 16-16S24.837 0 16 0zm0 29.6a13.56 13.56 0 01-6.937-1.873l-.495-.296-5.057 1.32 1.349-4.927-.324-.508A13.55 13.55 0 1129.6 16c0 7.48-6.12 13.6-13.6 13.6zm7.84-10.4c-.407-.204-2.41-1.188-2.785-1.32-.375-.139-.649-.204-.923.204-.28.407-1.06 1.32-1.3 1.592-.239.28-.482.313-.889.11-.407-.204-1.715-.63-3.267-2.008-1.207-1.08-2.02-2.408-2.252-2.815-.239-.407-.026-.63.179-.834.184-.182.407-.472.61-.708.204-.237.27-.407.407-.679.139-.28.07-.518-.035-.723-.105-.204-.923-2.241-1.26-3.075-.332-.8-.669-.691-.923-.702l-.784-.014c-.28 0-.723.103-1.1.518-.375.407-1.469 1.436-1.469 3.5 0 2.065 1.505 4.06 1.714 4.34.21.28 2.967 4.535 7.2 6.357 1.008.435 1.792.695 2.403.889 1.008.318 1.926.273 2.652.165.81-.12 2.41-.984 2.75-1.937.342-.954.342-1.77.239-1.937-.105-.165-.375-.26-.784-.464z" />
   </svg>
-  <span>Catálogo</span>
+  <span>Fale Conosco</span>
 </a>
 
 
