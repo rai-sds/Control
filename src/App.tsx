@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Phone, Mail, MapPin, Star, ArrowRight, CheckCircle, Settings, Shield, Clock, Award, ExternalLink, Eye, Sun, Palette, CloudRain, Users, CreditCard, Zap, Heart, Quote, MessageCircle, Instagram, Play, Scissors, Home, Building2 } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,7 +62,7 @@ function App() {
       icon: Eye,
       color: "from-purple-600 to-purple-700",
       // Imagem de exemplo para privacidade
-      solutionImage: "/assets/images/WhatsApp Image 2025-06-24 at 15.44.23 (1).jpeg",
+      solutionImage: "/assets/images/WhatsApp Image 2025-06-24 at 15.44.23.jpeg",
       solutionText: "Cortinas e persianas para total privacidade"
     },
     {
@@ -66,7 +71,7 @@ function App() {
       icon: Sun,
       color: "from-orange-600 to-orange-700",
       // Imagem de exemplo para controle térmico
-      solutionImage: "/assets/images/WhatsApp Image 2025-06-24 at 15.44.23.jpeg",
+      solutionImage: "/assets/images/WhatsApp Image 2025-06-24 at 15.41.04.jpeg",
       solutionText: "Toldos e telas solares para controle térmico"
     },
     {
@@ -84,7 +89,7 @@ function App() {
       icon: CloudRain,
       color: "from-blue-600 to-blue-700",
       // Imagem de exemplo para área externa
-      solutionImage: "/assets/images/WhatsApp Image 2025-06-24 at 15.41.04.jpeg",
+      solutionImage: "/assets/images/externa.jpg",
       solutionText: "Toldos robustos para qualquer clima"
     }
   ];
@@ -154,33 +159,30 @@ function App() {
     }
   ];
 
-  // DADOS DOS PROJETOS ANTES E DEPOIS
-  const beforeAfterProjects = [
-    {
-      title: "Transformação Residencial Completa",
-      location: "Brasília, DF",
-      category: "Residencial",
-      // PARA TROCAR: substitua pelas imagens /assets/images/antes-depois-1-antes.jpg e antes-depois-1-depois.jpg
-      beforeImage: "/assets/images/casa_pi_antes.jpg",
-      afterImage: "/assets/images/casa_pi_depois.jpg"
-    },
-    {
-      title: "Revitalização de Loja",
-      location: "Brasília, DF",
-      category: "Comercial",
-      // PARA TROCAR: substitua pelas imagens /assets/images/antes-depois-2-antes.jpg e antes-depois-2-depois.jpg
-      beforeImage: "/assets/images/malunga_antes.jpg",
-      afterImage: "/assets/images/malunga_depois.jpg"
-    },
-    {
-      title: "Área Externa Revitalizada",
-      location: "Goiânia, GO",
-      category: "Residencial",
-      // PARA TROCAR: substitua pelas imagens /assets/images/antes-depois-3-antes.jpg e antes-depois-3-depois.jpg
-      beforeImage: "/assets/images/varanda_antes.jpg",
-      afterImage: "/assets/images/varanda_depois.jpg"
-    }
-  ];
+
+  // DADOS DOS PROJETOS (APENAS UMA IMAGEM)
+const projects = [
+  {
+    title: "Transformação Residencial Completa",
+    location: "Brasília, DF",
+    category: "Residencial",
+    image: "/assets/images/cortina.jpg"
+  },
+  {
+    title: "Revitalização de Loja",
+    location: "Brasília, DF",
+    category: "Comercial",
+    image: "/assets/images/loja.jpg"
+  },
+  {
+    title: "Área Externa Revitalizada",
+    location: "Goiânia, GO",
+    category: "Residencial",
+    image: "/assets/images/toldo.jpg"
+  }
+];
+
+
 
   // DADOS DOS DIFERENCIAIS DA EMPRESA
   const whyChoose = [
@@ -273,7 +275,7 @@ function App() {
       address: "Rua 89B número 102 - Setor Sul",
       cep: "74093-180",
       phone: "+55 (62) 8556-5975",
-      email: "controlpersianas@hotmail.com",
+      email: "contato@controlpersianas.com.br",
       mapUrl: "https://maps.google.com/maps?q=Rua+89B+número+102,+Setor+Sul,+Goiânia,+GO,+74093-180",
       responsible: null
     }
@@ -351,6 +353,11 @@ function App() {
               }`}>
                 Serviços
               </a>
+              <a href="#trabalho" className={`font-medium transition-colors duration-300 hover:text-blue-600 ${
+                scrollY > 50 ? 'text-gray-900' : 'text-white'
+              }`}>
+                Nosso Trabalho
+              </a>
               <a href="#materials" className={`font-medium transition-colors duration-300 hover:text-blue-600 ${
                 scrollY > 50 ? 'text-gray-900' : 'text-white'
               }`}>
@@ -366,7 +373,7 @@ function App() {
               }`}>
                 Unidades
               </a>
-              <a href="#contact" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full font-medium hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300">
+              <a href="https://wa.me/c/556181276447" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full font-medium hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300">
                 Contato
               </a>
               <a 
@@ -403,6 +410,9 @@ function App() {
                 </a>
                 <a href="#services" className="block text-gray-900 font-medium hover:text-blue-600 transition-colors">
                   Serviços
+                </a>
+                <a href="#trabalho" className="block text-gray-900 font-medium hover:text-blue-600 transition-colors">
+                  Nosso Trabalho
                 </a>
                 <a href="#materials" className="block text-gray-900 font-medium hover:text-blue-600 transition-colors">
                   Materiais
@@ -568,7 +578,7 @@ function App() {
       </section>
 
       {/* SEÇÃO DE VÍDEO INSTITUCIONAL */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 to-blue-900 text-white">
+      <section id="trabalho" className="py-20 bg-gradient-to-r from-gray-900 to-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -585,27 +595,91 @@ function App() {
               {/* PLACEHOLDER PARA VÍDEO - SUBSTITUA PELA URL DO SEU VÍDEO */}
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-600/20 to-purple-600/20">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-colors cursor-pointer">
-                    <Play className="w-10 h-10 text-white ml-1" />
-                  </div>
+                  
                   
                 </div>
               </div>
               
               
-              <video 
-                className="w-full h-full object-cover"
-                controls
-                poster="/assets/images/video-thumbnail.jpg"
-              >
-                <source src="/assets/videos/video-institucional.mp4" type="video/mp4" />
-                Seu navegador não suporta vídeo.
-              </video>
+              <video
+  className="w-full h-full object-cover"
+  controls
+  playsInline
+  webkit-playsinline="true"
+  muted
+  poster="/assets/images/video-thumbnail.jpg"
+>
+  <source src="/assets/videos/video-institucional.mp4" type="video/mp4" />
+  Seu navegador não suporta vídeo.
+</video>
+
               
             </div>
           </div>
         </div>
+        
       </section>
+{/* CARROSSEL DE MODELOS */}
+<section id="modelos" className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Modelos de <span className="text-blue-600">Cortinas, Persianas e Toldos</span>
+      </h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Confira alguns modelos disponíveis para transformar o seu ambiente
+      </p>
+    </div>
+
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      spaceBetween={20}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      breakpoints={{
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }}
+    >
+      {[
+        { title: "Rolô tela solar SCREEN", image: "/assets/images/carrosel/rolotelsol.jpg" },
+        { title: "Rolô blackout", image: "/assets/images/carrosel/roloblack.jpg" },
+        { title: "Romana translúcido", image: "/assets/images/carrosel/romanatrans.jpg" },
+        { title: "Modelo celular", image: "/assets/images/carrosel/modelocelu.jpg" },
+        { title: "Persianas horizontal alumínio 25mm", image: "/assets/images/carrosel/perhoralu25mm.jpg" },
+        { title: "Romana", image: "/assets/images/carrosel/romana.jpg" },
+        { title: "Duo vision", image: "/assets/images/carrosel/duovision.jpg" },
+        { title: "Rolô blackout com bandô e guias laterais", image: "/assets/images/carrosel/roloblackbandogl.jpg" },
+        { title: "Horizontal alumínio 50mm com fita", image: "/assets/images/carrosel/horizalu50mm.jpg" },
+        { title: "Modelo Painel", image: "/assets/images/carrosel/modelospainel.jpg" },
+        { title: "Modelos cortina tecido", image: "/assets/images/carrosel/corttec.jpg" },
+        { title: "Parte de toldo", image: "/assets/images/carrosel/toldo.jpg" },
+        { title: "Modelos vertical (toldo cortina)", image: "/assets/images/carrosel/modvert.jpg" },
+        { title: "Toldos vertical com braço pivotante tensor", image: "/assets/images/carrosel/toldoverti.jpg" },
+        { title: "Toldos cobertura fixo", image: "/assets/images/carrosel/toldocoberfix.jpg" },
+        { title: "Toldo vertical com visor", image: "/assets/images/carrosel/vertical com visor.jpg" },
+        { title: "Toldo vertical com guia cabo de aço", image: "/assets/images/carrosel/toldovertcaboaca.jpg" },
+        { title: "Toldo mediterrâneo (capota", image: "/assets/images/carrosel/toldomedit.jpg" },
+        { title: "Toldo Articulado", image: "/assets/images/carrosel/toldoarticu.jpg" },
+      ].map((item, index) => (
+        <SwiperSlide key={index}>
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div className="p-4 text-center">
+              <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+</section>
 
       {/* SEÇÃO DE MATERIAIS PARA TOLDOS */}
       <section id="materials" className="py-20 bg-white">
@@ -653,68 +727,55 @@ function App() {
       </section>
 
       {/* SEÇÃO DE PROJETOS ANTES E DEPOIS */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Transformações <span className="text-blue-600">Incríveis</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Veja o antes e depois dos nossos projetos e inspire-se para sua próxima transformação
-            </p>
+      {/* SEÇÃO DE PROJETOS (APENAS UMA IMAGEM POR CARD) */}
+<section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Transformações <span className="text-blue-600">Incríveis</span>
+      </h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Veja o antes e depois dos nossos projetos e inspire-se para sua próxima transformação
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
+        >
+          {/* IMAGEM ÚNICA */}
+          <div className="relative overflow-hidden h-64">
+            <img
+              src={project.image}
+              alt={project.title}
+              // fallback simples caso a imagem 404
+              onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/assets/images/placeholder.jpg'; }}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            {/* CATEGORIA (badge) */}
+            <div className="absolute bottom-4 left-4">
+              <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+                {project.category}
+              </span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {beforeAfterProjects.map((project, index) => (
-              <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
-                <div className="relative">
-                  {/* CONTAINER ANTES E DEPOIS */}
-                  <div className="grid grid-cols-2 h-64">
-                    {/* ANTES */}
-                    <div className="relative overflow-hidden">
-                      <img 
-                        src={project.beforeImage} 
-                        alt={`${project.title} - Antes`}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 rounded text-xs font-bold">
-                        ANTES
-                      </div>
-                    </div>
-                    
-                    {/* DEPOIS */}
-                    <div className="relative overflow-hidden">
-                      <img 
-                        src={project.afterImage} 
-                        alt={`${project.title} - Depois`}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute top-2 right-2 bg-green-600 text-white px-2 py-1 rounded text-xs font-bold">
-                        DEPOIS
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* CATEGORIA DO PROJETO */}
-                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 flex items-center">
-                    <MapPin className="w-4 h-4 mr-1" />
-                    {project.location}
-                  </p>
-                </div>
-              </div>
-            ))}
+          {/* CONTEÚDO DO CARD */}
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+            <p className="text-gray-600 flex items-center mb-4">
+              <MapPin className="w-4 h-4 mr-2" />
+              {project.location}
+            </p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* SEÇÃO POR QUE ESCOLHER A CONTROL */}
       <section className="py-20 bg-gradient-to-br from-blue-900 to-gray-900 text-white relative overflow-hidden">
@@ -890,7 +951,8 @@ function App() {
       </section>
 
       {/* SEÇÃO DE CONTATO */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* SEÇÃO DE CONTATO */}
+<section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {/* SEÇÃO ESPECIAL PARA QUEM CHEGOU ATÉ O FINAL */}
@@ -941,61 +1003,32 @@ function App() {
 
     {/* GRID COM INFORMAÇÕES DE CONTATO E WHATSAPP */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      {/* INFORMAÇÕES DE CONTATO */}
-      <div className="space-y-8">
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
-          <div className="space-y-6">
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Brasília</h4>
-                <p className="text-gray-600 mb-1">SMPW Quadra 26 Conjunto 07 Lote 11/12</p>
-                <p className="text-gray-600 mb-1">CEP: 71741-600</p>
-                <p className="text-gray-600 mb-2">Responsável: Daniel Finotti Borges</p>
-                <p className="text-gray-600 mb-1">📱 Tel: (61) 98127-6447</p>
-                <p className="text-gray-600">contato@controlpersianas.com.br</p>
-              </div>
-            </div>
+      {/* -- exemplo: aqui poderia ir outro conteúdo na coluna esquerda (se tiver) */}
+      <div className="hidden lg:block" />
 
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Goiânia</h4>
-                <p className="text-gray-600 mb-1">Rua 89B número 102 - Setor Sul</p>
-                <p className="text-gray-600 mb-2">CEP: 74093-180</p>
-                <p className="text-gray-600 mb-1">📱 Tel: (62) 8556-5975</p>
-                <p className="text-gray-600">controlpersianas@hotmail.com</p>
-              </div>
-            </div>
-          </div>
+      {/* Card centralizado: ocupa a faixa toda (col-span) e centra o conteúdo */}
+      <div className="col-span-1 lg:col-span-2 flex justify-center">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Entre em Contato</h3>
+          <p className="text-gray-600 mb-6">
+            Fale conosco pelo WhatsApp e receba atendimento personalizado
+          </p>
+          <a 
+            href="https://wa.me/5561981276447?text=Olá! Vim através do site da Control Persianas e gostaria de mais informações sobre os serviços."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transform hover:scale-105 transition-all duration-300 mx-auto"
+          >
+            <MessageCircle className="w-6 h-6" />
+            <span>Falar no WhatsApp</span>
+          </a>
         </div>
-      </div>
-
-      {/* FORMULÁRIO DE CONTATO SIMPLIFICADO */}
-      <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Entre em Contato</h3>
-        <p className="text-gray-600 mb-6">
-          Fale conosco pelo WhatsApp e receba atendimento personalizado
-        </p>
-        <a 
-          href="https://wa.me/5561981276447?text=Olá! Vim através do site da Control Persianas e gostaria de mais informações sobre os serviços."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transform hover:scale-105 transition-all duration-300"
-        >
-          <MessageCircle className="w-6 h-6" />
-          <span>Falar no WhatsApp</span>
-        </a>
       </div>
     </div>
 
   </div>
 </section>
+
        
       {/* RODAPÉ */}
       <footer className="bg-gray-900 text-white py-12">
@@ -1020,7 +1053,7 @@ function App() {
                Há mais de 10 anos levando conforto e praticidade com persianas, cortinas e toldos motorizados.
               </p>
               <div className="mt-4 text-sm text-gray-500">
-                <p>CNPJ: 47.665.646/0001-51</p>
+                <p>CNPJ: 11.247.936/0001-38</p>
                 <p>Site: www.controlpersianas.com.br</p>
                 <p>Instagram: @controlpersianas</p>
               </div>
@@ -1051,7 +1084,7 @@ function App() {
             <p>&copy; 2025 Control Persianas - CNPJ: 47.665.646/0001-51. Todos os direitos reservados.</p>
           </div>
         </div>
-        {/* BOTÃO FLUTUANTE DO CATÁLOGO */}
+        {/* BOTÃO FLUTUANTE DO FALE CONOSCO */}
 <a
   href="https://wa.me/c/556181276447"
   target="_blank"
