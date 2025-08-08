@@ -746,7 +746,7 @@ const projects = [
           className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
         >
           {/* IMAGEM ÚNICA */}
-          <div className="relative overflow-hidden h-64">
+          <div className="relative overflow-hidden h-80">
             <img
               src={project.image}
               alt={project.title}
@@ -1037,12 +1037,10 @@ const projects = [
             <div className="col-span-2">
               <div className="flex items-center space-x-3 mb-6">
                 <img 
-                  src="/WhatsApp Image 2025-06-24 at 12.19.10.jpeg" 
-                  alt="Control Persianas Logo" 
-                  className="h-10 w-auto"
-                  style={{ 
-                    filter: 'brightness(0) invert(1)',
-                    background: 'transparent'
+                  src="/WhatsApp Image 2025-06-24 at 12.19.10.jpeg"
+  alt="Control Persianas Logo"
+  className="h-10 w-auto"
+  style={{ background: 'transparent'
                   }}
                   onError={() => {
                     console.error('Erro ao carregar a imagem do logo no rodapé');
@@ -1081,7 +1079,7 @@ const projects = [
           </div>
 
           <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
-            <p>&copy; 2025 Control Persianas - CNPJ: 47.665.646/0001-51. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Control Persianas - CNPJ: 11.247.936/0001-38. Todos os direitos reservados.</p>
           </div>
         </div>
         {/* BOTÃO FLUTUANTE DO FALE CONOSCO */}
