@@ -746,7 +746,7 @@ const projects = [
           className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
         >
           {/* IMAGEM ÚNICA */}
-          <div className="relative overflow-hidden h-80">
+          <div className="relative overflow-hidden h-150">
             <img
               src={project.image}
               alt={project.title}
