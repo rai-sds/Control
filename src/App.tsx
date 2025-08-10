@@ -178,7 +178,7 @@ const projects = [
     title: "Área Externa Revitalizada",
     location: "Goiânia, GO",
     category: "Residencial",
-    image: "/assets/images/toldo.jpg"
+    image: "/assets/images/rede.jpg"
   }
 ];
 
